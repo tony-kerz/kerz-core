@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	">
+
+	<aop:config>
+		<aop:aspect ref="observableAspect">
+			<aop:pointcut id="observablePointcut" expression="execution(* com.kerz.aop.ObservableTarget.*(..))" />
+			<aop:around pointcut-ref="observablePointcut" method="notifyObserversAdvice" />
+		</aop:aspect>
+		<aop:aspect ref="observableAspect2">
+			<aop:pointcut id="observablePointcut2" expression="execution(* com.kerz.aop.ObservableTarget2.*(..))" />
+			<aop:around pointcut-ref="observablePointcut2" method="notifyObserversAdvice" />
+		</aop:aspect>
+	</aop:config>
+
+	<bean id="observableAspect" class="com.kerz.aop.ObservableAspectFactoryBean">
+		<property name="observers">
+			<list>
+				<bean class="com.kerz.aop.TestObserver" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="observableAspect2" class="com.kerz.aop.ObservableAspectFactoryBean">
+		<property name="observers">
+			<list>
+				<bean class="com.kerz.aop.TestObserver" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ot1" class="com.kerz.aop.ObservableTarget" />
+	<bean id="ot2" class="com.kerz.aop.ObservableTarget2" />
+
+</beans>

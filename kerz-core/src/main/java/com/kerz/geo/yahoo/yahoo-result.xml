@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResultSet version="1.0">
+	<Error>0</Error>
+	<ErrorMessage>No error</ErrorMessage>
+	<Locale>us_US</Locale>
+	<Quality>87</Quality>
+	<Found>1</Found>
+	<Result>
+		<quality>87</quality>
+		<latitude>37.416275</latitude>
+		<longitude>-122.025092</longitude>
+		<offsetlat>37.416397</offsetlat>
+		<offsetlon>-122.025055</offsetlon>
+		<radius>500</radius>
+		<name>
+		</name>
+		<line1>701 1st Ave</line1>
+		<line2>Sunnyvale, CA 94089-1019</line2>
+		<line3>
+		</line3>
+		<line4>United States</line4>
+		<house>701</house>
+		<street>1st Ave</street>
+		<xstreet>
+		</xstreet>
+		<unittype>
+		</unittype>
+		<unit>
+		</unit>
+		<postal>94089-1019</postal>
+		<neighborhood>
+		</neighborhood>
+		<city>Sunnyvale</city>
+		<county>Santa Clara County</county>
+		<state>California</state>
+		<country>United States</country>
+		<countrycode>US</countrycode>
+		<statecode>CA</statecode>
+		<countycode>
+		</countycode>
+		<uzip>94089</uzip>
+		<hash>DDAD1896CC0CDC41</hash>
+		<woeid>12797150</woeid>
+		<woetype>11</woetype>
+	</Result>
+</ResultSet>
