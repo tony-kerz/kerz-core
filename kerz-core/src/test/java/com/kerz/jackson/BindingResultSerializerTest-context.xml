@@ -4,12 +4,12 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	">
 
-	<bean class="com.kerz.json.ObjectMapperFactoryBean">
+	<bean class="com.kerz.jackson.ObjectMapperFactoryBean">
 		<property name="module">
-			<bean class="com.kerz.json.CustomModule">
+			<bean class="com.kerz.jackson.CustomModule">
 				<property name="serializers">
 					<list>
-						<bean class="com.kerz.json.BindingResultSerializer" />
+						<bean class="com.kerz.jackson.BindingResultSerializer" />
 					</list>
 				</property>
 			</bean>

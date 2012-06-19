@@ -10,10 +10,11 @@
 	<artifactId>kerz-core</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>jaxen</groupId> -->
-<!-- 			<artifactId>jaxen</artifactId> -->
-<!-- 		</dependency> -->
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+			<optional>true</optional>
+		</dependency>
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
@@ -43,6 +44,11 @@
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
