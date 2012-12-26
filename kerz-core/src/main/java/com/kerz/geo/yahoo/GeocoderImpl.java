@@ -132,6 +132,7 @@ public class GeocoderImpl implements Geocoder, InitializingBean
 		geoAddress.setCity(resultElt.elementText("city"));
 		geoAddress.setCountryCode(resultElt.elementText("countrycode"));
 		geoAddress.setCountyCode(resultElt.elementText("countycode"));
+		geoAddress.setCounty(resultElt.elementText("county"));
 		geoAddress.setHouse(resultElt.elementText("house"));
 		geoAddress.setLatitude(Float.parseFloat(resultElt.elementText("latitude")));
 		geoAddress.setLongitude(Float.parseFloat(resultElt.elementText("longitude")));

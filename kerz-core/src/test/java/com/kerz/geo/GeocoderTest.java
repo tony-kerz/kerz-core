@@ -26,6 +26,14 @@ public class GeocoderTest
 	}
 	
 	@Test
+	public void zip()
+	{
+		String address = "06067";
+		GeocoderResponse geoAddress = geocoder.geocode(address);
+		System.out.println(geoAddress);
+	}
+	
+	@Test
 	public void hash()
 	{
 		GeocoderResponse geoAddress1 = geocoder.geocode("300 hebron avenue, glastonbury ct");
@@ -44,5 +52,14 @@ public class GeocoderTest
 		GeocoderResponse geoAddress = geocoder.reverse(new GeoPoint(37.5627, -122.3195));
 		Assert.assertEquals(geoAddress.getCity(), "San Mateo");
 		System.out.println(geoAddress);
+	}
+	
+	@Test
+	public void county()
+	{
+		String address = "06067";
+		GeocoderResponse geoAddress = geocoder.geocode(address);
+		System.out.println(geoAddress);
+		Assert.assertEquals(geoAddress.getCounty(), "Hartford County");
 	}
 }

@@ -4,142 +4,153 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class GeocoderResponse
 {
-  private String city;
-  private String countryCode;
-  private String countyCode;
-  private String hash;
-  private String house;
-  private float latitude;
-  private float longitude;
-  private String postalCode;
-  private String stateCode;
-  private String street;
-  private String unit;
-  private String unitType;
+	private String city;
+	private String countryCode;
+	private String county;
+	private String countyCode;
+	private String hash;
+	private String house;
+	private float latitude;
+	private float longitude;
+	private String postalCode;
+	private String stateCode;
+	private String street;
+	private String unit;
+	private String unitType;
 
-  public String getCity()
-  {
-    return city;
-  }
+	public String getCity()
+	{
+		return city;
+	}
 
-  public String getCountryCode()
-  {
-    return countryCode;
-  }
+	public String getCountryCode()
+	{
+		return countryCode;
+	}
 
-  public String getCountyCode()
-  {
-    return countyCode;
-  }
+	public String getCounty()
+	{
+		return county;
+	}
 
-  public String getHash()
-  {
-    return hash;
-  }
+	public String getCountyCode()
+	{
+		return countyCode;
+	}
 
-  public String getHouse()
-  {
-    return house;
-  }
+	public String getHash()
+	{
+		return hash;
+	}
 
-  public float getLatitude()
-  {
-    return latitude;
-  }
+	public String getHouse()
+	{
+		return house;
+	}
 
-  public float getLongitude()
-  {
-    return longitude;
-  }
+	public float getLatitude()
+	{
+		return latitude;
+	}
 
-  public String getPostalCode()
-  {
-    return postalCode;
-  }
+	public float getLongitude()
+	{
+		return longitude;
+	}
 
-  public String getStateCode()
-  {
-    return stateCode;
-  }
+	public String getPostalCode()
+	{
+		return postalCode;
+	}
 
-  public String getStreet()
-  {
-    return street;
-  }
+	public String getStateCode()
+	{
+		return stateCode;
+	}
 
-  public String getUnit()
-  {
-    return unit;
-  }
+	public String getStreet()
+	{
+		return street;
+	}
 
-  public String getUnitType()
-  {
-    return unitType;
-  }
+	public String getUnit()
+	{
+		return unit;
+	}
 
-  public void setCity(String city)
-  {
-    this.city = city;
-  }
+	public String getUnitType()
+	{
+		return unitType;
+	}
 
-  public void setCountryCode(String countryCode)
-  {
-    this.countryCode = countryCode;
-  }
+	public void setCity(String city)
+	{
+		this.city = city;
+	}
 
-  public void setCountyCode(String countyCode)
-  {
-    this.countyCode = countyCode;
-  }
+	public void setCountryCode(String countryCode)
+	{
+		this.countryCode = countryCode;
+	}
 
-  public void setHash(String hash)
-  {
-    this.hash = hash;
-  }
+	public void setCounty(String county)
+	{
+		this.county = county;
+	}
 
-  public void setHouse(String house)
-  {
-    this.house = house;
-  }
+	public void setCountyCode(String countyCode)
+	{
+		this.countyCode = countyCode;
+	}
 
-  public void setLatitude(float latitude)
-  {
-    this.latitude = latitude;
-  }
+	public void setHash(String hash)
+	{
+		this.hash = hash;
+	}
 
-  public void setLongitude(float longitude)
-  {
-    this.longitude = longitude;
-  }
+	public void setHouse(String house)
+	{
+		this.house = house;
+	}
 
-  public void setPostalCode(String postalCode)
-  {
-    this.postalCode = postalCode;
-  }
+	public void setLatitude(float latitude)
+	{
+		this.latitude = latitude;
+	}
 
-  public void setStateCode(String stateCode)
-  {
-    this.stateCode = stateCode;
-  }
+	public void setLongitude(float longitude)
+	{
+		this.longitude = longitude;
+	}
 
-  public void setStreet(String street)
-  {
-    this.street = street;
-  }
+	public void setPostalCode(String postalCode)
+	{
+		this.postalCode = postalCode;
+	}
 
-  public void setUnit(String unit)
-  {
-    this.unit = unit;
-  }
+	public void setStateCode(String stateCode)
+	{
+		this.stateCode = stateCode;
+	}
 
-  public void setUnitType(String unitType)
-  {
-    this.unitType = unitType;
-  }
+	public void setStreet(String street)
+	{
+		this.street = street;
+	}
 
-  @Override
-  public String toString()
-  {
-    return ToStringBuilder.reflectionToString(this);
-  }
+	public void setUnit(String unit)
+	{
+		this.unit = unit;
+	}
+
+	public void setUnitType(String unitType)
+	{
+		this.unitType = unitType;
+	}
+
+	@Override
+	public String toString()
+	{
+		return ToStringBuilder.reflectionToString(this);
+	}
 }
