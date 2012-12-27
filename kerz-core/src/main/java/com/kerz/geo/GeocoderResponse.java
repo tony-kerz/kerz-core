@@ -13,6 +13,7 @@ public class GeocoderResponse
 	private float latitude;
 	private float longitude;
 	private String postalCode;
+	private String state;
 	private String stateCode;
 	private String street;
 	private String unit;
@@ -61,6 +62,11 @@ public class GeocoderResponse
 	public String getPostalCode()
 	{
 		return postalCode;
+	}
+
+	public String getState()
+	{
+		return state;
 	}
 
 	public String getStateCode()
@@ -126,6 +132,11 @@ public class GeocoderResponse
 	public void setPostalCode(String postalCode)
 	{
 		this.postalCode = postalCode;
+	}
+
+	public void setState(String state)
+	{
+		this.state = state;
 	}
 
 	public void setStateCode(String stateCode)
