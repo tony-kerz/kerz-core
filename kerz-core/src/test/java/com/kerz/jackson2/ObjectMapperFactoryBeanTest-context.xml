@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+	">
+
+	<bean id="propertyFilter.abstract" class="com.kerz.beans.PropertyFilter" abstract="true" />
+	<bean id="propertyProcessor.abstract" class="com.kerz.beans.PropertyProcessor" abstract="true" />
+
+	<bean id="globalPropertyFilter" parent="propertyFilter.abstract">
+		<property name="excludeProperties">
+			<set>
+				<value>new</value>
+				<value>class</value>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="serializerPropertyProcessor" parent="propertyProcessor.abstract">
+		<property name="propertyFilters">
+			<set>
+				<ref bean="globalPropertyFilter" />
+			</set>
+		</property>
+	</bean>
+
+	<bean id="deserializerPropertyProcessor" parent="propertyProcessor.abstract">
+		<property name="propertyFilters">
+			<set>
+				<ref bean="globalPropertyFilter" />
+				<bean parent="propertyFilter.abstract">
+					<property name="excludeProperties">
+						<set>
+							<value>id</value>
+						</set>
+					</property>
+				</bean>
+			</set>
+		</property>
+	</bean>
+
+	<bean class="com.kerz.jackson2.ObjectMapperFactoryBean">
+		<property name="module">
+			<bean class="com.kerz.jackson2.CustomModule">
+				<property name="serializers">
+					<list>
+						<bean class="com.kerz.jackson2.BindingResultSerializer" />
+					</list>
+				</property>
+				<property name="deserializerModifiers">
+					<list>
+						<bean class="com.kerz.jackson2.CustomDeserializerModifier" p:propertyProcessor-ref="deserializerPropertyProcessor" />
+					</list>
+				</property>
+				<property name="serializerModifiers">
+					<list>
+						<bean class="com.kerz.jackson2.CustomSerializerModifier" p:propertyProcessor-ref="serializerPropertyProcessor" />
+					</list>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
