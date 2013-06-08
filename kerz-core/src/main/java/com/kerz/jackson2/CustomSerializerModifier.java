@@ -31,7 +31,7 @@ public class CustomSerializerModifier extends BeanSerializerModifier
 		{
 			String propertyName = beanPropertyWriter.getName();
 
-			log.debug("processing property=[{}] from bean-serializer-builder", propertyName);
+			log.debug("processing property=[{}]", propertyName, beanClass);
 
 			if (!includedProperties.contains(propertyName))
 			{
